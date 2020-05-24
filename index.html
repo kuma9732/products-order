@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>購入Box</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link href="css/all.css" rel="stylesheet">
+  <link href="css/purchase.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div id="header">
+      <h1>セラコン株式会社</h1>
+      <div id="navi">
+        <button class="menu-toggler">
+        <span></span>
+        </button>
+      <nav id="menu">
+        <ul>
+        <li><a href="index.html"><span>HOME</span></a></li>
+        <li><a href="products.html"><span>製品情報</span></a></li>
+        <li><a href="company.html"><span>会社情報</span></a></li>
+        <li><a href="ir.html"><span>IR情報</span></a></li>
+        <li><a href="recruit.html"><span>採用情報</span></a></li>
+        <li><a href="contact.html"><span>お問い合わせ</span></a></li>
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="cart-container">
+      <div class="cart-inner">
+        <div class="order-heading">ご注文内容</div>
+        <div class="product-heading">製品 / 価格</div>
+        <div class="cart"></div>
+        <div class="total"></div>
+        <div class="cart-input">
+          <div class="cart-input__table">
+            <div class="order-content">
+                <span class="required">お名前</span>
+                <input type="text" name="name" placeholder="例）世良 権造">
+            </div>
+            <div class="order-content">
+              <span class="required">メール</span>
+              <input type="text" name="email" placeholder="例）ceracon@ceracon.co.jp">
+            </div>
+            <div class="order-content">
+              <span class="required">電話番号</span>
+              <input type="text" name="tell" placeholder="例）000-0000-0000"> 
+            </div>
+            <div class="order-content">         
+              <span class="required">会社名</span>
+              <input type="text" name="company" placeholder="例）CERA-CON株式会社">            
+            </div>
+            <div class="order-content">
+              <span class="required">部署名</span>
+              <input type="text" name="department" placeholder="例）開発部">
+            </div>
+          </div>
+        </div>
+        <div class="send-order">注文を確定する</div>
+      </div>
+    </section>
+    <section id="cart-btn">
+      <span class="totalitems"></span>
+      <div class="cart-icon cart-toggle">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>カート</h3>
+      </div>
+    </section>
+    <section id="selection">
+      <h2>アルミ電解コンデンサ</h2>
+        <div class="first items"></div>      
+      <h2>積層セラミックコンデンサ</h2>
+        <div class="third items"></div>
+      <h2>リチウム電池</h2>
+        <div class="second items"></div>      
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2020 CERACON Co., Ltd</p>
+  </footer>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/purchase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
