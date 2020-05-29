@@ -108,9 +108,9 @@ $(function(){
                                 <div id= "${key}">
                                     <div class="image"><img src="${image}"></div>
                                     <div class="category">${category}</div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">直径 : ${size}[mm]</div>                                 
+                                    <div class="capacitance">静電容量 : ${capacitance}[μF]</div>                                 
+                                    <div class="voltage">定格電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                                              
                                     <div class="add-to-cart cart-icon" data-id="${key}"><i class="fas fa-cart-plus"></i></div>
                                 </div>
@@ -123,9 +123,9 @@ $(function(){
                                 <div id= "${key}">
                                     <div class="image"><img src="${image}"></div>
                                     <div class="category">${category}</div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">サイズ規格 : ${size}</div>                                 
+                                    <div class="capacitance">静電容量 : ${capacitance}[μF]</div>                                 
+                                    <div class="voltage">定格電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                   
                                     <div class="add-to-cart cart-icon" data-id="${key}"><i class="fas fa-cart-plus"></i></div>
                                 </div>
@@ -137,15 +137,14 @@ $(function(){
                                 <div id= "${key}">
                                     <div class="image"><img src="${image}"></div>
                                     <div class="category">${category}</div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">直径 : ${size}[mm]</div>                                 
+                                    <div class="capacitance">公称容量 : ${capacitance}[mAh]</div>                                 
+                                    <div class="voltage">公称電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                    
                                     <div class="add-to-cart cart-icon" data-id="${key}"><i class="fas fa-cart-plus"></i></div>
                                 </div>
                             </div>`;
                 }
-                
             });
 
             $('.first').html(first);
