@@ -186,7 +186,6 @@ body {
   background: #fff;
   font-size: 14px;
   border: 1px solid var(--secondary-color);
-  line-height: 2;
 }
 
 .cart-category,.cart-size,
@@ -274,6 +273,7 @@ body {
   font-weight: 600;
   width: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .send-order:hover,
@@ -305,6 +305,7 @@ body {
   text-align: center;
   font-size: 28px;
   z-index: 200;
+  cursor: pointer;
 }
 
 .fa-shopping-cart{
@@ -444,7 +445,8 @@ body {
   justify-content: center;
   position: absolute;
   bottom: 0;
-  right: 10%; 
+  right: 10%;
+  cursor: pointer; 
 }
 
 .product-box .cart-icon .fas{
