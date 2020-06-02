@@ -427,6 +427,10 @@ body {
   grid-row: 4/5;
 }
 
+.category{
+  display: none;
+}
+
 .product-box .cart-icon{
   font-size: 24px;
   background: #fff;
@@ -497,12 +501,12 @@ footer p{
   .cart-price{
     font-size: 18px;
   }
-  .cart-detail{
 
+  .cart-detail{
     line-height: initial;
   }
 
-  .cart-remove {
+  .cart-remove{
     font-size: 40px;
     margin-right: 15px;
   }
@@ -551,11 +555,11 @@ footer p{
   }
 
   #cart-btn .cart-icon{
-    right: 30%;
+    right: 20%;
   }
 
   .totalitems{
-    right: 28%;
+    right: 18%;
   }
   
   .send-order {

@@ -9,9 +9,9 @@ const firebaseConfig = {
 
 
 $(function(){
-    const databese = firebase.database();
-    const selection = databese.ref('selection/');
-    const orders = databese.ref('orders/');
+    const databese = firebase.database(),
+         selection = databese.ref('selection/'),
+            orders = databese.ref('orders/');
 
     /* --------------------------------
     * Notification
@@ -49,9 +49,8 @@ $(function(){
         e.preventDefault();
 
         const category = $('[name=category').val(),
-            //   title = $('[name=title').val(),
                   size = $('[name=size').val(),
-             capacitance = $('[name=capacitance').val(),
+         　capacitance = $('[name=capacitance').val(),
                voltage = $('[name=voltage').val(),
                  price = $('[name=price').val(),
                  image = $('[name=image').val().slice(12),
@@ -62,7 +61,6 @@ $(function(){
         } else {
             newId.set({
                 category : category,
-                //    title : title,
                     size : size,
                capacitance : capacitance,
                  voltage : voltage,
@@ -72,7 +70,6 @@ $(function(){
             function(error){
                 if(!error){
                     Notification("inserted successfully");
-                    // $('[name=title').val("")
                     $('[name=size').val("")
                     $('[name=capacitance').val("")
                     $('[name=voltage').val("")
@@ -95,13 +92,12 @@ $(function(){
                third = "";
         
             $.each(data.val(),function(key, value){
-                let id = key,
-                category = value['category'],
-                   size = value['size'],
-                   capacitance = value['capacitance'],
-                   voltage = value['voltage'],
-                   price = value['price'],
-                   image = value['image'];
+                let category = value['category'],
+                        size = value['size'],
+                 capacitance = value['capacitance'],
+                     voltage = value['voltage'],
+                       price = value['price'],
+                       image = value['image'];
 
                 if(category == 'first'){                   
                     first += `<div class="product-box">
@@ -113,9 +109,9 @@ $(function(){
                                     <div class="voltage">定格電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                                              
                                     <div class="add-to-cart cart-icon" data-id="${key}"><i class="fas fa-cart-plus"></i></div>
+                                    <div class="category" data-id="${key}"><i class="fas fa-cart-plus"></i></div>
                                 </div>
-                            </div>`;
-                            
+                            </div>`;      
                 } 
                 else if(category == 'second')
                 {                   
@@ -157,14 +153,14 @@ $(function(){
             $('.add-to-cart').click(function(){
 
                 let thekey = $(this).data('id'),
-                category = $(`#${thekey} > .category`).text(),
+                  category = $(`#${thekey} > .category`).text(),
                       size = $(`#${thekey} > .size`).text(),
-                 capacitance = $(`#${thekey} > .capacitance`).text(),
+               capacitance = $(`#${thekey} > .capacitance`).text(),
                    voltage = $(`#${thekey} > .voltage`).text(),
                      price = $(`#${thekey} > .price`).text();
 
                 if(category == 'first'){
-                    let appenddata = `<div class="cart-detail">
+                    let appendData = `<div class="cart-detail">
                                         <div class="cart-category">アルミ電解コンデンサ</div>
                                         <div class="cart-size">${size}</div>
                                         <div class="cart-capacitance">${capacitance}</div>
@@ -172,10 +168,10 @@ $(function(){
                                         <div class="cart-price">${price}</div>
                                         <div class="cart-remove">×</div>
                                       </div>`;
-                    $('.cart').append(appenddata);
+                    $('.cart').append(appendData);
 
                 }else if (category == 'second'){
-                    let appenddata = `<div class="cart-detail">
+                    let appendData = `<div class="cart-detail">
                                         <div class="cart-category">積層セラミックコンデンサ</div>
                                         <div class="cart-size">${size}</div>
                                         <div class="cart-capacitance">${capacitance}</div>
@@ -183,10 +179,10 @@ $(function(){
                                         <div class="cart-price">${price}</div>
                                         <div class="cart-remove">×</div>
                                     </div>`;
-                    $('.cart').append(appenddata);
+                    $('.cart').append(appendData);
 
                 }else if (category == 'third'){
-                    let appenddata = `<div class="cart-detail">
+                    let appendData = `<div class="cart-detail">
                                         <div class="cart-category">リチウム電池</div>
                                         <div class="cart-size">${size}</div>
                                         <div class="cart-capacitance">${capacitance}</div>
@@ -194,7 +190,7 @@ $(function(){
                                         <div class="cart-price">${price}</div>
                                         <div class="cart-remove">×</div>
                                     </div>`;
-                    $('.cart').append(appenddata);
+                    $('.cart').append(appendData);
                 };
                 console.log(category);
             });
@@ -215,11 +211,11 @@ $(function(){
 
                 total();
 
-                let totalrows = $('.cart-price').length,
-                  itemcounter = $('.totalitems');
+                let totalRrows = $('.cart-price').length,
+                  itemCounter = $('.totalitems');
 
-                   itemcounter.fadeOut(500, function(){
-                    $(this).html(totalrows).fadeIn(500);
+                    itemCounter.fadeOut(500, function(){
+                    $(this).html(totalRrows).fadeIn(500);
                    })
             });
        
@@ -227,13 +223,13 @@ $(function(){
             * Calculate Total
             * -------------------------------- */
             const total = () =>{
-                let allcartproducts = $('.cart-price'),
+                let allCartProducts = $('.cart-price'),
                           total = 0;
                     
-                    for(let i=0; i < allcartproducts.length; i++){
-                        var getprice = $('.cart-price').eq(i).text();
-                        getpriceNumber = getprice.replace(/[^0-9]/g, '');
-                        total += parseInt(getpriceNumber);
+                    for(let i=0; i < allCartProducts.length; i++){
+                        var getPrice = $('.cart-price').eq(i).text();
+                        getPriceNumber = getPrice.replace(/[^0-9]/g, '');
+                        total += parseInt(getPriceNumber);
                     }
 
                 $('.total').text(`合計金額 : ${total}円`);
@@ -258,10 +254,11 @@ $(function(){
                 for(let i = 0; i < totalrows; i++){
                     var items = 
                     {
-                             size : $('.cart-size').eq(i).text(),
-                        capacitance : $('.cart-capacitance').eq(i).text(),
-                          voltage : $('.cart-voltage').eq(i).text(),
-                            price : $('.cart-price').eq(i).text(),
+                        category : $('.cart-category').eq(i).text(),
+                            size : $('.cart-size').eq(i).text(),
+                     capacitance : $('.cart-capacitance').eq(i).text(),
+                         voltage : $('.cart-voltage').eq(i).text(),
+                           price : $('.cart-price').eq(i).text(),
                     }
 
                     ordereditems.push(items);
